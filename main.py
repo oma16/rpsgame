@@ -1,14 +1,14 @@
-from random import Random
+from random import random
 
 while True:
-    R = "rock"
-    P =  "paper" 
-    S = "scissors"
+    rock = "R"
+    paper =  "P" 
+    scissors = "S"
 
-    gameoptions = [R, S, P]
-    computeroption = Random.choice(gameoptions)
-    player = input("Enter your option(R or S or P):")
-    if player == (R or S or P):
+    gameoptions = [rock, paper, scissors]
+    computeroption = random.choice(gameoptions)
+    player = input("Enter your option(R or S or P):").upper()
+    if player in gameoptions:
         print(f"\nplayer {player} : cpu {computeroption}")
        
     else:  
@@ -17,20 +17,20 @@ while True:
     if player == computeroption:
             print("both player selected {player}. it is a tie")
         
-    elif player == R:
-        if  computeroption == S:
+    elif player == rock:
+        if  computeroption == scissors:
             print("Rock smahes Scissors! You win!")
         else:
             print("Paper covers Rock! You lose")    
 
-    elif player == P:
-        if  computeroption == R:
+    elif player == paper:
+        if  computeroption == rock:
             print("Paper covers Rock! You win") 
             
         else:
             print("Scissors cuts paper! You lose!")
-    elif player == S:
-        if  computeroption == P:
+    elif player == scissors:
+        if  computeroption == paper:
             print("Scissors cuts paper! You win!")
         else:
             print("Rock smashes Scissors! You lose")    
